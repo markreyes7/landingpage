@@ -79,7 +79,7 @@ function insert(param){
     while(flag){
     if (arr[num] == undefined)  {
             console.log("it is undefined!");
-            console.log("inserting now........")
+            console.log("inserting now........");
             arr[num] = param;
             flag = false;
         }
@@ -109,10 +109,10 @@ function isOkay(){
         }
         else if(arr[i] != arr2[i]){
             console.log("the user keys do not match the secret key");
-            arr.length =3;
+            arr.length =0;
             }
-        else if(arr[14] == arr2[14]){
-            console.log("the user found the way!")
+        else if(arr[15] == arr2[15]){
+            console.log("the user found the way!");
         }
     }
 }
