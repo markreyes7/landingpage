@@ -4,9 +4,10 @@ var arr = new Array(15);
 
 var arr2 = new Array(1,1,1,2,3,3,3,4,5,5,5,6,7,7,7,1)
 var totalNum = 0;
-function playE(){
+
+function playE1(){
     var uniqueNum = 1;
-    var audio = document.getElementById("e");
+    var audio = document.getElementById("e1");
     audio.currentTime = 0;
     audio.play();
     insert(uniqueNum);
@@ -66,7 +67,7 @@ function playDFlat(){
 
 function playA(){
     var uniqueNum =7;
-    var audio = document.getElementById("a");
+    var audio = document.getElementById("aChord");
     audio.currentTime = 0;
     audio.play();
     insert(uniqueNum);
