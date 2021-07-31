@@ -3,23 +3,26 @@
     color: #acb1b1;
     text-align: center;
     transition: background-color .6s;
-    
+    border: 1px solid transparent;
 }
 .style:hover{
-    background-color: #14b3c3;     
+    border: 1px solid #d0d0d0;     
 }
+
 #center{
     position: fixed;
-    left: 35%;
-  
+    left: 40%;
     top: 30%;
-  
 }
 
 #grid{
     display: grid;
     grid-template-columns: repeat(9, 60px);
-    grid-template-rows: repeat(3,60px);
+    grid-template-rows: repeat(2,60px);
+}
+
+#flexbox{
+    display: flex;
 }
 
 #p{
@@ -30,32 +33,27 @@
 
 #l{
     grid-column-start: 2;
-    grid-column-end: 3;
-    
+    grid-column-end: 3;   
 }
 
 #a{
     grid-column-start: 3;
     grid-column-end: 4;
-    
 }
 
 #y{
     grid-column-start: 4;
     grid-column-end: 5;
-  
 }
 
 #t{
     grid-column-start: 6;
     grid-column-end: 7;
-    
 }
 
 #h{
     grid-column-start: 7;
     grid-column-end: 8;
-   
 }
 #e0{
     grid-column-start: 8;
@@ -75,32 +73,27 @@
     grid-column-start: 3;
     grid-column-end: 4;
     grid-row-start: 2;
-    grid-row-end: 3;
-    
+    grid-row-end: 3;  
 }
 #c{
     grid-column-start: 4;
     grid-column-end: 5;
     grid-row-start: 2;
     grid-row-end: 3;
-   
-
 }
 
 #r{
     grid-column-start: 5;
     grid-column-end: 6;
     grid-row-start: 2;
-grid-row-end: 3;
-
+    grid-row-end: 3;
 }
 
 #e3{
     grid-column-start: 6;
     grid-column-end: 7;
     grid-row-start: 2;
-grid-row-end: 3;
-
+    grid-row-end: 3;
 }
 
 #t2{
@@ -108,46 +101,42 @@ grid-row-end: 3;
     grid-column-end: 8;
     grid-row-start: 2;
     grid-row-end: 3;
-
-    
 }
 
 #n{
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 3;
-    text-align: end;
-
-   
+   flex-grow: 1;
+   width: 40px; 
 }
 
 
 #o{
-    grid-column-start:  3;
-    grid-column-end: 4;
-    text-align: end;
+    flex-grow: 1; 
     
 }
 #t3{
-    grid-column-start: 4;
-    grid-column-end:  5;
-    text-align: end;
+    flex-grow: 1; 
 
 }
 #e4{
-    grid-column-start: 5;
-    grid-column-end: 6;
-    text-align: end;
-    
+    flex-grow: 1; 
 }
+
 #s2{
-    grid-column-start:  6;
-    grid-column-end: 7;
-    text-align: end;
-  
+    flex-grow: 1; 
 }
 
 body{
     background-color:#1d1d1d;
     min-height: 100vh;
+}
+
+.fix{
+    height: 60px;
+    width: 60px;
+    text-align: center;
+
+}
+
+.fix:hover{
+    border: 1px solid #d0d0d0;
 }
