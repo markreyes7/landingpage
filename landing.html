@@ -5,68 +5,68 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="features.js"></script>
-    <link rel="stylesheet" href="style.css">
+  
+    
 </head>
 <body>
     <div id="center">
         <div id="grid">
-        <div class="style" id="p" onclick="playE1()">
-            <div>P</div>
+        <div class="styler" id="p" onclick="playE1();checker(this.id)">
+            <div class="centerkeys">P</div>
         </div>
-        <div class="style" id="l" onclick="playE2()">
-            <div >L</div>
+        <div class="styler" id="l" onclick="playE2();checker(this.id)">
+            <div class="centerkeys" >L</div>
         </div>
-        <div class="style" id="a" onclick="playEFlat()">
-            <div >A</div>
+        <div class="styler" id="a" onclick="playEFlat();checker(this.id)">
+            <div class="centerkeys" >A</div>
         </div>
-        <div class="style" id="y" onclick="playEFlat2()">
-            <div >Y</div>
+        <div class="styler" id="y" onclick="playEFlat2();checker(this.id)">
+            <div class="centerkeys" >Y</div>
         </div>
-        <div class="style" id="t" onclick="playD()">
-            <div >T</div>
+        <div class="styler" id="t" onclick="playD();checker(this.id)">
+            <div class="centerkeys" >T</div>
         </div>
-        <div class="style" id="h" onclick="playDFlat()">
-            <div>H</div>
+        <div class="styler" id="h" onclick="playDFlat();checker(this.id)">
+            <div class="centerkeys" >H</div>
         </div>
-        <div class="style" id="e0" onclick="playA()">
-            <div>E</div>
+        <div class="styler" id="e0" onclick="playA();checker(this.id)">
+            <div class="centerkeys" >E</div>
         </div>
-        <div class="style" id="s">
-            <div>S</div>
+        <div class="styler" id="s">
+            <div class="centerkeys" >S</div>
         </div>
-        <div class="style" id="chord">
-            <div>E</div>
+        <div class="styler" id="chord">
+            <div class="centerkeys" >E</div>
         </div>
-        <div class="style" id="c">
-            <div>C</div>
+        <div class="styler" id="c">
+            <div class="centerkeys" >C</div>
         </div>
-        <div class="style" id="r">
-            <div>R</div>
+        <div class="styler" id="r">
+            <div class="centerkeys" >R</div>
         </div>
-        <div class="style" id="e3">
-            <div>E</div>
+        <div class="styler" id="e3">
+            <div class="centerkeys" >E</div>
         </div>
-        <div class="style" id="t2">
-            <div>T</div>
+        <div class="styler" id="t2">
+            <div class="centerkeys" >T</div>
         </div>
         </div>
         <div id="flexbox">
-        <div class="style" id="n">
-            <div class="fix">N</div>
+        <div class="style2" id="n">
+            <div class="centerflexkeys">N</div>
         </div>
         
-        <div class="style" id="o">
-            <div class="fix">O</div>
+        <div class="style2" id="o">
+            <div class="centerflexkeys">O</div>
         </div>
-        <div class="style" id="t3">
-            <div class="fix" >T</div>
+        <div class="style2" id="t3">
+            <div class="centerflexkeys" >T</div>
         </div>
-        <div class="style" id="e4">
-            <div class="fix" >E</div>
+        <div class="style2" id="e4">
+            <div class="centerflexkeys" >E</div>
         </div>
-        <div class="style" id="s2">
-            <div class="fix">S</div>
+        <div class="style2" id="s2">
+            <div class="centerflexkeys">S</div>
         </div>
 
         </div>
@@ -80,4 +80,6 @@
     <audio id="d2" src="/Users/mark/audio/6th_part.mp3"></audio>
     <audio id="aChord" src="/Users/mark/audio/8th_part.mp3"></audio>
 </body>
+<script src="features.js"></script>
+<link rel="stylesheet" href="style.css">
 </html>

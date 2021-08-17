@@ -1,63 +1,143 @@
-.style{
+.styler{
     background-color: #1d1d1d;
     color: #acb1b1;
     text-align: center;
     transition: background-color .6s;
     border: 1px solid transparent;
+    vertical-align: middle;
+    width: 50px;
+    border-radius: 4px;
 }
-.style:hover{
-    border: 1px solid #d0d0d0;     
+.style2{
+    background-color: #1d1d1d;
+    color: #acb1b1;
+    text-align: center;
+    transition: background-color .6s;
+    border: 1px solid transparent;
+    border-radius: 4px;
+
+}
+
+
+
+.centerkeys{
+    vertical-align: middle;
+    text-align: center;
+    height: 50px;
+    width: 50px;
+    line-height: 50px;
+   
+    transition: box-shadow 0.3s;
+    border-radius: 4px;
+}
+
+.centerflexkeys{
+    vertical-align: middle;
+    text-align: center;
+    height: 50px;
+    width: 50px;
+    line-height: 50px;
+
+    transition: box-shadow 0.3s;
+    border-radius: 4px;
+}
+
+.centerkeys:hover{
+    border: 1px transparent #d0d0d0;    
+    box-shadow: inset  0 0 5px 2px rgb(131, 130, 130), 0 0 10px 5px rgb(184, 181, 181) ;
+}
+
+.centerflexkeys:hover{
+    border: 1px transparent rgb(184, 181, 181);    
+
+    box-shadow: inset  0 0 5px 2px rgb(131, 130, 130), 0 0 10px 5px rgb(184, 181, 181) ;   
 }
 
 #center{
     position: fixed;
-    left: 40%;
+    left: 38%;
     top: 30%;
 }
 
 #grid{
     display: grid;
     grid-template-columns: repeat(9, 60px);
-    grid-template-rows: repeat(2,60px);
+    grid-template-rows: repeat(2, 60px);
 }
 
 #flexbox{
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+
+body{
+    background-color:#1d1d1d;
+    min-height: 100vh;
+}
+
+
 
 #p{
     grid-column-start: 1;
     grid-column-end: 2;
-    
+  
+    animation-name: slidein;
+     animation-duration: 5s;
+   
 }
+@keyframes slidein{
+    0% {
+        transform: translateY(-1000%);
+      }
 
+
+    
+      100% {
+        transform: translateY(0%);
+        
+      }
+}
 #l{
     grid-column-start: 2;
     grid-column-end: 3;   
+    animation: slidein;
+    animation-duration: 5s;
 }
 
 #a{
     grid-column-start: 3;
     grid-column-end: 4;
+    animation: slidein;
+    animation-duration: 5s; 
 }
 
 #y{
     grid-column-start: 4;
     grid-column-end: 5;
+    animation: slidein;
+    animation-duration: 5s;
 }
 
 #t{
     grid-column-start: 6;
     grid-column-end: 7;
+    animation: slidein;
+    animation-duration: 5s;
 }
 
 #h{
     grid-column-start: 7;
     grid-column-end: 8;
+    animation: slidein;
+    animation-duration: 5s;
 }
 #e0{
     grid-column-start: 8;
     grid-column-end: 9;
+    animation: slidein;
+    animation-duration: 5s;
    
 }
 
@@ -66,6 +146,8 @@
     grid-column-end: 3;
     grid-row-start: 2;
     grid-row-end: 3;
+    animation: slidein;
+    animation-duration: 4.4s;
    
 }
 
@@ -74,12 +156,16 @@
     grid-column-end: 4;
     grid-row-start: 2;
     grid-row-end: 3;  
+    animation: slidein;
+    animation-duration: 4.4s;
 }
 #c{
     grid-column-start: 4;
     grid-column-end: 5;
     grid-row-start: 2;
     grid-row-end: 3;
+    animation: slidein;
+    animation-duration: 4.4s;
 }
 
 #r{
@@ -87,6 +173,8 @@
     grid-column-end: 6;
     grid-row-start: 2;
     grid-row-end: 3;
+    animation: slidein;
+    animation-duration: 4.4s;
 }
 
 #e3{
@@ -94,6 +182,8 @@
     grid-column-end: 7;
     grid-row-start: 2;
     grid-row-end: 3;
+    animation: slidein;
+    animation-duration: 4.4s;
 }
 
 #t2{
@@ -101,42 +191,62 @@
     grid-column-end: 8;
     grid-row-start: 2;
     grid-row-end: 3;
+    animation: slidein;
+    animation-duration: 4.4s;
 }
 
 #n{
    flex-grow: 1;
    width: 40px; 
+   animation: slidein;
+    animation-duration: 3.4s;
 }
 
 
 #o{
     flex-grow: 1; 
+    animation: slidein;
+    animation-duration: 3.4s;
     
 }
 #t3{
     flex-grow: 1; 
+    animation: slidein;
+    animation-duration: 3.4s;
 
 }
 #e4{
     flex-grow: 1; 
+    animation: slidein;
+    animation-duration: 3.4s;
 }
 
 #s2{
     flex-grow: 1; 
+    animation: slidein;
+    animation-duration: 3.4s;
 }
 
-body{
-    background-color:#1d1d1d;
-    min-height: 100vh;
-}
-
-.fix{
-    height: 60px;
-    width: 60px;
-    text-align: center;
-
-}
-
-.fix:hover{
-    border: 1px solid #d0d0d0;
-}
+/* to draw an arrow */
+.arrow {
+    width: 120px;
+  }
+  
+  .line {
+    margin-top: 14px;
+    width: 90px;
+    background: blue;
+    height: 10px;
+    float: left;
+    transform: rotate(90deg);
+  
+  }
+  
+  .line::after {
+    width: 0;
+    height: 0;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-left: 30px solid blue;
+  
+  }
