@@ -1,19 +1,25 @@
 /* STARTING INDEX STYLE*/
 
+
+
+:root{
+  --pixel-count:0;
+}
+
+
 *{
     margin:0;
     padding: 0;
     box-sizing: border-box;
     
 }
-/**:hover { 
-    outline:1px blue solid;
-  } */
+
   
 
 body{
-    background-color: rgb(232, 234, 230);
+    background-color: #e5ebeb;
     min-height: 100vh;
+    overflow-y: hidden ;
 }
 
 nav{
@@ -24,6 +30,9 @@ img {
     max-width: 100%;
     max-height: 100%;
 }
+ol li{
+  list-style-type: none;
+}
 
 #header{
     display: flex;
@@ -31,22 +40,26 @@ img {
     width: 100vw;
     height: 15vh;
     position: relative;
-    color: black;
+    color: #001213;
     flex-grow: 1;
 }
 
 #flexChild1{
     position: absolute;
-    
     display: flex;
     justify-content: flex-end;
     align-self: center;
     left: 6%;
+    box-shadow: -10px 0 5px 0px #40023f;
+    border-radius: 60px;
+    padding: 5px 5px 5px 5px;
+    
 }
 .header-font{
     font-family: Didot;
     font-size: 3.425rem;
     font-weight: bold;
+    
 }
 .header-font-ed{
     font-family: Didot;
@@ -92,7 +105,7 @@ img {
 }
 
 #content{
-  background-color: rgb(124, 148, 115);
+  background-color: black;
   border-radius: 6px;
   opacity: 1;
   transform: translate(25%,-5%);
@@ -103,12 +116,44 @@ img {
   vertical-align: middle;
   z-index: 5000;
   cursor:pointer;
-  background-image: url(https://developer.spotify.com/assets/FBImage.png);
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: 90% 30%;
   filter: blur(2px);
+}
 
+#progress-bar{
+  background-color: black;
+  justify-content: center;
+  
+  align-items: flex-start;
+  border-radius: 50px;
+  display: flex;
+  width: 2px;
+  padding: 0 2px ;
+  position: absolute;
+  left: 80%;
+  height: 94%;
+  top: 4%;
+}
+
+#progress-value {
+  animation: load 3s normal forwards;
+  box-shadow: 0 10px 40px -10px #fff;
+  border-radius: 50px;
+  background: #fff;
+  height: 33%;
+  width: 0;
+  justify-self: center;
+  position: absolute;
+}
+
+#sect{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow-y: hidden;
+}
+
+#list{
+  animation: none;
 
 }
 
@@ -123,8 +168,7 @@ img {
   }
 
 
-#effect-1{
-  
+/*#effect-1{
     display: none;
     border-radius: 6px;
     mix-blend-mode: multiply;
@@ -154,7 +198,7 @@ img {
     position: absolute;
     width: 54%;
     z-index: 3000;
-}
+} 
 
 #effect-2 {
     animation: rotate 1.9s linear reverse infinite;
@@ -164,7 +208,7 @@ img {
     #main:hover #effect-1,
     #main:hover #effect-2 {
   display: block;
-}
+} */
 
 #buttonStyle{
     position:absolute;
@@ -199,6 +243,17 @@ button{
     
 }
 
+section img {
+   
+    object-fit: fill;
+}
+
+.picture-size{
+ 
+  width: 75%;
+  height: 650px;
+}
+
 button:hover{
     box-shadow: 0px 0px 5px 8px grey;
 }
@@ -224,6 +279,19 @@ button:hover{
 #whole-page{
   width: 100vw;
   height: 100vh ;
+}
+
+#jump-to-proj{
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  right: 1%;
+  top: 4%;
+}
+
+#jump-to-proj img{
+  width: 80px;
+  height: 100px;
 }
 @keyframes rotate {
     0% {
@@ -295,4 +363,46 @@ button:hover{
           
       }
   }
+
+  @keyframes moveDown{
+    from{
+        transform: translateY(0);
+    }
+    to{
+        transform: translateY(var(--pixel-count));
+    }
+}
+
+@keyframes moveDownFurther{
+    from{
+        transform: translateY(-700px);
+    }
+    to{
+        transform: translateY(var(--pixel-count));
+    }
+}
+
+@keyframes moveUp{
+    from{
+        transform: translateY(-1400px);
+    }
+    to{
+        transform: translateY(var(--pixel-count));
+    }
+}
+
+@keyframes moveUpFurther{
+    from{
+        transform: translateY(-700px);
+    }
+    to{
+        transform: translateY(var(--pixel-count));
+    }
+}
+
+
+@keyframes load {
+  0% { width: 0; }
+  100% { width: 100%; }
+}
 
