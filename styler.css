@@ -23,7 +23,7 @@ img {
     max-width: 100%;
     max-height: 100%;
    
-    object-fit: cover;
+    
 }
 ol li{
     list-style-type: none;
@@ -95,15 +95,14 @@ ol li{
 }
 #list{
     position: relative;
-    overflow: hidden;
+    height: 100%;
 }
 #sect{
     position: absolute;
-    height: 90%;
-    width: 90%;
+    height: 100%;
+    width: 100%;
     overflow: hidden;
-    left: 5%;
-    top: 5%;
+    
 }
 
 #list img{
