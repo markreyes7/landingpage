@@ -1,8 +1,10 @@
 let section =  document.getElementById("sect");
 let list = document.getElementById("list")
 let root = document.documentElement;
+let progressValue = document.getElementById("progress-value");
 let locations = document.querySelectorAll('li[data-location]');
 console.log(locations[0].getAttribute('data-location'))
+
 
 var scrollingDirection = 0; //idle
 var lastScroll = 9999;
@@ -11,8 +13,8 @@ let maxProgress = 99.9;
 let currProgress = 33.3
 let nIntervId;
 let position = 0;     //for which piece of content we are on
-let currentDisplay = 0;  //defines the amount we have scrolled up. 
-let scrolls = 0;
+let amountMoved = 0;  //defines the amount we have scrolled up. 
+let running =  false;
 
 
 section.addEventListener('wheel',wheel);
@@ -22,17 +24,39 @@ function wheel(e){
     var timeNow = performance.now();
     if (delta > 0 && ( scrollingDirection != 1 || timeNow > lastScroll + scrollIdleTime) ) {
         scrollUp();
-        setTimeout(() => {console.log("after " + scrolls +" current display is " + currentDisplay)},4000);
+        
         scrollingDirection = 1;
     } else if (delta < 0 && ( scrollingDirection != 2 || timeNow > lastScroll + scrollIdleTime)) {
         scrollDown();
+        
         scrollingDirection = 2;
     }
     lastScroll = timeNow;
 }
 
-function scrollUp(){
+//window resize
+
+window.onresize = function (){
+    var ourEle = locations[position];
+    
+    if (position === 0 ){
+        amountMoved = 0;
+    }
+    else if (position === 1){
+        amountMoved = ourEle.clientHeight;
+    }
+    else if (position ===2){
+        amountMoved = ourEle.clientHeight * 2
+    }
+
+} 
+
+function scrollUp(amount){
     //TODO: CHECK RESIZE OF BROWSER.
+
+    if (running === true ){
+        return;
+    }
     if (position == locations[2].getAttribute('data-location')){
         console.log('end of proj')
         return;
@@ -40,22 +64,28 @@ function scrollUp(){
     let height = list.clientHeight; // to change scroll based on users viewport.
     console.log(height)
     let num = 0;
+    running = true;
     
     nIntervId = setInterval(function(){
-        num += 2;
-        currentDisplay += 2;
-        list.style.transform = 'translateY(-' +  currentDisplay + 'px)';
+        num += 1;
+        amountMoved += 1;
+        list.style.transform = 'translateY(-' +  amountMoved + 'px)';
         if (Math.round(num) === Math.round(height) ){
             console.log("hi")
+            running = false
             clearInterval(nIntervId);
         }
     }, 1)
-    
+    progression();
     position+=1
-    scrolls+=1;
+    
 }
 
 function scrollDown(){
+    if (running === true){
+        return;
+    }
+
     if (position == locations[0].getAttribute('data-location')){
         console.log('top of proj');
         return;
@@ -63,16 +93,81 @@ function scrollDown(){
     let height = list.clientHeight;
     console.log(height);
     let num = 0;
-
+    running = true;
     nIntervId = setInterval(function(){
         num+=1;
-        currentDisplay-=1;
-        list.style.transform = 'translateY(' + Math.abs(currentDisplay) *-1 + 'px)';
+        amountMoved-=1;
+        list.style.transform = 'translateY(' + Math.abs(amountMoved) *-1 + 'px)';
         if (Math.round(num) === Math.round(height)){
             console.log("hi");
+            running = false;
             clearInterval(nIntervId);
         }
     }, 1)
+    regression();
     position -=1;
-    scrolls +=1;
+   
+}
+
+function progression(){
+    currProgress += 33.3;
+    console.log('curr progress is ' + currProgress);
+    if(Math.round(currProgress) === Math.round(maxProgress) ){        //needs work. Math.round() is used since 33.3 + 66.6 == about 99.89.....
+        progressValue.style.height = 100 + '%'
+        return;
+
+    }
+    progressValue.style.height = currProgress + '%';
+}
+
+function regression(){
+    currProgress -= 33.3;
+    console.log('curr progress is ' + currProgress);
+    if (Math.round(currProgress) === 0){
+        progressValue.style.height = 0;
+        return;
+      }
+    progressValue.style.height = currProgress +'%';
+}
+
+function youClicked(obj){
+    position = obj.getAttribute('data-project');
+    console.log(position + " >")
+    if ((position == 0) ){
+        currProgress = 33.3;
+       
+        root.style.setProperty('--pixel-count', amountMoved *-1 + 'px');
+        list.style.animation = 'jumpTo 1.5s';
+        progressValue.style.height = 33.3 + '%';
+       
+        setTimeout(() =>{
+            amountMoved = 0;
+            root.style.setProperty('--pixel-count', amountMoved);
+            list.style.transform = 'translateY('+ amountMoved + ')';
+            console.log("moved")
+            list.style.animation = 'none'
+        }, 1500) ;
+        
+    }
+    else if(position == 1){ 
+        //set a new position. subtract or add the client height by the amount moved.
+        position = obj.getAttribute('data-project');
+
+            currProgress = 66.6;
+            root.style.setProperty('--pixel-count', amountMoved *-1 + 'px');
+            list.style.animation = 'jumpTo 1.5s';
+            progressValue.style.height = 66.6 + '%';
+
+            setTimeout(() =>{
+                amountMoved 
+                root.style.setProperty('--pixel-count', amountMoved);
+                list.style.transform = 'translateY('+ amountMoved + ')';
+                console.log("moved")
+                list.style.animation = 'none'
+            }, 1500);
+        
+    }
+    else if(position == 2){
+
+    }
 }

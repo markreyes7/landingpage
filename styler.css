@@ -77,6 +77,7 @@ ol li{
     width: 9.375rem;
     flex: 1 1 12.5rem;
     align-self: center;
+    cursor: pointer;
 }
 
 #main-content{
@@ -92,10 +93,12 @@ ol li{
     width: 50%;
     background-color: #001213;
     transform: translate(50%, 20%);
+    cursor: pointer;
 }
 #list{
     position: relative;
     height: 100%;
+    animation: none;
 }
 #sect{
     position: absolute;
@@ -121,8 +124,8 @@ ol li{
     padding: 0 2px ;
     position: relative;
     left: 80%;
-    height: 94%;
-    top: 4%;
+    height: 50%;
+    top: 10%;
   }
 
   #progress-value {
@@ -135,3 +138,29 @@ ol li{
     justify-self: center;
     position: absolute;
   }
+
+  #jump-to{
+      cursor: pointer;
+      top: 20%;
+      right: 10%;
+      width: 100px;
+      height: 300px;
+      position: absolute;
+  }
+
+#flex-list{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    position: absolute;
+}
+
+@keyframes jumpTo{
+    from{
+        transform: translateY(var(--pixel-count));
+    }
+    to{
+        transform: translateY(0);
+    }
+}
+
