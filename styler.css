@@ -10,9 +10,9 @@
 }
 
 body{
-    background-color: #e5ebeb;
+    background-color: #222222;
     min-height: 100vh;
-    overflow: hidden;
+ 
 }
 
 nav{
@@ -31,19 +31,31 @@ ol li{
 }
   #header{
     display: flex;
-    gap: 50%;
     width: 100vw;
-    height: 15vh;
+    height: 12vh;
+    justify-content: center;
     position: relative;
-    color: #001213;
+    align-items: center;
+    color: #EEEEEE;
     flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+    
 }
+    
+#line{
+        position: absolute;
+        display: block;
+        width: 343px;
+        height: 1px;
+        bottom: 7%;
+        left: 13%;
+        background-color: white;
+        content: "";
+} 
 #flexChild1{
     position: absolute;
     display: flex;
-    justify-content: flex-end;
-    align-self: center;
-    left: 6%;
     border-radius: 60px;
     padding: 5px 5px 5px 5px;
 }
@@ -59,108 +71,86 @@ ol li{
   display: flex;
   flex-direction: row;
   justify-content: center; /* horizontal position */
-  align-items: flex-end; /* vertical position */
+  align-items: end; /* vertical position */
   width: 30px;
 }
-
-#flexChild2{
-    position: absolute;
-    right: 5vw;
-    justify-content: flex-start;
-    align-self: center;
-    width: 20%;
-}
-
-
-.logos{
-    height: 3.125rem;
-    width: 9.375rem;
-    flex: 1 1 12.5rem;
-    align-self: center;
-    cursor: pointer;
-}
-
 #main-content{
     width: 100vw;
     height: 100vh;
     position: relative;
 }
-#display{
+.horizontal{
     position: absolute;
-    align-self: center;
-    justify-self: center;
-    height: 50%;
-    width: 50%;
-    background-color: #001213;
-    transform: translate(50%, 20%);
-    cursor: pointer;
+    width: 69px;
+    height: 1px;
+    background-color: white;
 }
-#list{
+.vertical{
+    position: absolute;
+    width: 1px;
+    height: 55px;
+    background-color: white;
+}
+
+
+#pos1{
+    position: absolute;
+    top: 1%;
+    left: 50%;
+}
+
+#pos2{
+    position: absolute;
+    left: 3%;
+    top: 38%;
+}
+
+#pos3{
+    position: absolute;
+    left: 50%;
+    bottom: 14%;
+}
+
+#pos4{
+    position: absolute;
+    right: 4%;
+    top: 38%;
+}
+
+#content{
+    display: flex;
     position: relative;
-    height: 100%;
-    animation: none;
-}
-#sect{
-    position: absolute;
-    height: 100%;
-    width: 100%;
+    color: wheat;
+    font-family: Didot;
+    font-size: 3.425rem;
+    font-weight: bolder;
+    background:  rgba(0, 0, 0, 0.582);
+    animation: bg-animation 5s infinite alternate;
     overflow: hidden;
-    
-}
-
-#list img{
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-}
-
-#progress-bar{
-    background-color: black;
+    width: 60%;
+    height: 54%;
+    left: 21%;
+    right: 20%;
+    top: 16%;
+    align-items: center;
+    text-align: center;
     justify-content: center;
-    align-items: flex-start;
-    border-radius: 70px;
-    display: flex;
-    width: 2px;
-    padding: 0 2px ;
-    position: relative;
-    left: 80%;
-    height: 50%;
-    top: 10%;
-  }
-
-  #progress-value {
-    animation: load 3s normal forwards;
-    box-shadow: 0 10px 40px -10px #fff;
-    border-radius: 70px;
-    background: #fff;
-    height: 33%;
-    width: 2px;
-    justify-self: center;
-    position: absolute;
-  }
-
-  #jump-to{
-      cursor: pointer;
-      top: 20%;
-      right: 10%;
-      width: 100px;
-      height: 300px;
-      position: absolute;
-  }
-
-#flex-list{
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-    position: absolute;
+   
 }
-
-@keyframes jumpTo{
+@keyframes bg-animation{
     from{
-        transform: translateY(var(--pixel-count));
+        background: rgba(0, 0, 0, 0.582);
     }
     to{
-        transform: translateY(0);
+        background: rgba(0, 0, 0, 1);
     }
 }
 
+#video-bg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-height: 100%;
+    min-height: 100%;
+    z-index: -1;
+}
