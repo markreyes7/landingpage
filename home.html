@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="header">
+        <div id="flexChild1">
+            <div class="header-font">M</div>
+            <div class="header-font">A</div>
+            <div class="header-font" >R</div>
+            <div class="header-font" >K</div>
+            <div class="header-font-ed">
+                <div id="pos">E</div>
+                 <div>D</div>
+        </div>
+            <div class="header-font" >B</div>
+            <div class="header-font" >Y</div>
+            <div class="header-font" >M</div>
+            <div class="header-font" >A</div>
+            <div class="header-font" >R</div>
+            <div class="header-font" >K</div>
+            <div id="line"></div>
+        </div>
+    </div>
+    <div id="main-content" >
+        <div id="pos1" class="vertical" ></div>
+        <div id="pos2" class="horizontal"></div>
+        <div id="pos3" class="vertical"></div>
+        <div id="pos4" class="horizontal"></div>
+        <div id="content" onclick="slideIn()">
+            <video id="video-bg" autoplay muted loop> 
+                <source data-video="spotify" src="videos/video1.mp4" type="video/mp4">
+                <source data-video="maps" src="videos/video2.mp4" type="video/mp4">
+                <source data-video="landing" src="videos/video3.mp4" type="video/mp4">
+            </video>
+            <span id="text"></span>
+        </div>
+    </div>
+</body>
+<link rel="stylesheet" href="home-style.css">
+<script src="features1.js"></script>
+</html>

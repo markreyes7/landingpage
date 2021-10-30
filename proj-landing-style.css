@@ -1,0 +1,25 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #222222;
+    min-width: 100vw;
+    min-height: 100vh;
+    height: 100vh;
+}
+
+#main-content{
+    position: relative;
+   
+    left: 16%;
+    top: 10%;
+    width: 83%;
+    height: 86%;
+    bottom: 0%;
+    right: 5%;
+    background-color: gray;
+    border-radius: 40px;
+}
