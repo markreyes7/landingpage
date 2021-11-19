@@ -12,7 +12,7 @@
 body{
     background-color: #222222;
     min-height: 100vh;
- 
+    
 }
 
 
@@ -21,10 +21,15 @@ nav{
     flex-grow: 1;
 }
 img {
-    max-width: 100%;
-    max-height: 100%;
-   
-    
+    min-width: 20%;
+    max-width: 80%;
+    min-height: 20%;
+    max-height: 80%; 
+}
+
+video{
+    min-width: 80%;
+    min-height: 100% ;
 }
 ol li{
     list-style-type: none;
@@ -166,7 +171,7 @@ ol li{
 #video-bg{
     position: absolute;
     top: 0;
-    left: 0;
+   
     min-height: 100%;
     min-height: 100%;
     z-index: -1;
@@ -185,3 +190,107 @@ ol li{
     }
 }
 
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 53vh;
+    margin-top: 21%;
+    position: relative;
+    bottom: 140px;
+}
+
+.ticket{
+    display: grid;
+    grid-template-columns: 65% 35%;
+    grid-template-rows: 0.2fr 0.05fr 0.4fr 0.05fr 0.2fr;
+    height: 100%;
+    width: 60%;
+    grid-template-areas: "title1 picture"
+                "title2 picture"
+                "title3 picture"
+                "title4 picture"
+                "title5 picture"
+                "title6 picture";
+    border: 6px solid white;
+    object-fit: cover;
+    position: relative;
+    margin-bottom: 125px;
+    border-radius: 30px ;
+    
+  
+}
+.ticket:before,
+.ticket:after{
+    height:90px;
+    width:45px;
+    content: '';
+    position: absolute;
+    top: 0.9em;
+    top: 43%;
+    height: 60px;
+    width: 53px;
+    border: 5px solid white;
+}
+.ticket:before {
+    left: -6px;
+    border-radius: 0 60px 60px 0;
+    border-left-color: #222222;
+}
+.ticket:after {
+    right: -6px;
+    border-radius: 60px 0 0 60px;
+    border-right-color: #222222;
+}
+.ticket-font{
+    font-family: Trattatello, fantasy;
+    font-size:min(3.125rem);
+    color: white;
+}
+
+.ticket-font-sub{
+    font-family: Jazz LET, cursive;
+    color: white;
+}
+.ticket-font-main{
+    font-family: Snell Roundhand, cursive;
+    font-size:min(3.125rem);
+    font-weight: bolder;
+    color: white;
+}
+
+.line1{
+    grid-area: title1;
+    justify-self: center;
+    align-self: center;
+}
+.line2{
+    grid-area: title2;
+    justify-self: center;
+    align-self: center;
+}
+.line3{
+    grid-area: title3;
+    justify-self: center;
+    align-self: center;
+}
+.line4{
+    grid-area: title4;
+    justify-self: center;
+    align-self: center;
+}
+.line5{
+    grid-area: title5;
+    justify-self: center;
+    align-self: center;
+}
+.line6{
+    grid-area: title6;
+    justify-self: center;
+    align-self: center;
+}
+.picture{
+    grid-area: picture;
+    object-fit: cover;
+    
+}
