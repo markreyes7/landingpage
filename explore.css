@@ -1,0 +1,40 @@
+:root{
+    --main-font: 'Montserrat', sans-serif;
+    --main-font-weight: 500;
+    --main-font-size: 16px;
+}
+
+
+.header-info a{
+    color: black;
+}
+
+.description p {
+    line-height: 25px;
+}
+
+header{
+    padding: 1rem 3rem 3rem 3rem;
+}
+
+
+.header{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
+.header-info-main{
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    right: 2%;
+    align-items: center;
+    gap: 20px;
+}
+
+.header-info{
+    font-family: var(--main-font);
+    font-weight: var(--main-font-weight);
+}

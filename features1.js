@@ -1,3 +1,4 @@
+const body = document.querySelector('body');
 let video = document.getElementById("video-bg");
 let source = document.querySelector("source");
 let text = document.getElementById("text");
@@ -55,6 +56,7 @@ function slideIn(){
     changeHorizontalSize();
     getCurrVideo();
    setTimeout(transitionPage, 2800);
+    body.style.overflowY = 'hidden'
 }
 
 function slideInRight(){

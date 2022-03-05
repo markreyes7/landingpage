@@ -12,19 +12,12 @@
 body{
     background-color: #222222;
     min-height: 100vh;
-    
 }
 
-
-nav{
-    display: flex;
-    flex-grow: 1;
-}
 img {
-    min-width: 20%;
-    max-width: 80%;
-    min-height: 20%;
-    max-height: 80%; 
+    max-width: 100%;
+    max-height: 100%; 
+    object-fit: contain;
 }
 
 video{
@@ -203,7 +196,7 @@ section{
 .ticket{
     display: grid;
     grid-template-columns: 65% 35%;
-    grid-template-rows: 0.2fr 0.05fr 0.4fr 0.05fr 0.2fr;
+    grid-template-rows: 0.2fr 0.2fr 0.4fr 0.05fr 0.2fr;
     height: 100%;
     width: 60%;
     grid-template-areas: "title1 picture"
@@ -243,21 +236,30 @@ section{
     border-right-color: #222222;
 }
 .ticket-font{
-    font-family: Trattatello, fantasy;
+    font-family: Snell Roundhand, cursive;
     font-size:min(3.125rem);
     color: white;
 }
+.ticket-font:first-child{
+    font-weight: bolder;
+}
 
 .ticket-font-sub{
-    font-family: Jazz LET, cursive;
+    font-family: Snell Roundhand, cursive;
     color: white;
 }
+
+.ticket-font-sub-xl{
+    font-size: 40px;
+}
+
 .ticket-font-main{
     font-family: Snell Roundhand, cursive;
     font-size:min(3.125rem);
     font-weight: bolder;
     color: white;
 }
+
 
 .line1{
     grid-area: title1;
@@ -289,8 +291,22 @@ section{
     justify-self: center;
     align-self: center;
 }
+
+.info-flex{
+    display: flex;
+    width: 100%;
+}
+.info-flex-child{
+    flex-grow: 1;
+    height: 150px;
+    width: 250px;
+    filter: invert(100%);
+}
 .picture{
     grid-area: picture;
-    object-fit: cover;
-    
+}
+
+#center{
+    align-self: center;
+    top: 3%;
 }

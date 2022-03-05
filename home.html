@@ -1,38 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <div id="header">
         <div id="flexChild1">
             <div class="header-font">M</div>
             <div class="header-font">A</div>
-            <div class="header-font" >R</div>
-            <div class="header-font" >K</div>
+            <div class="header-font">R</div>
+            <div class="header-font">K</div>
             <div class="header-font-ed">
                 <div id="pos">E</div>
-                 <div>D</div>
-        </div>
-            <div class="header-font" >B</div>
-            <div class="header-font" >Y</div>
-            <div class="header-font" >M</div>
-            <div class="header-font" >A</div>
-            <div class="header-font" >R</div>
-            <div class="header-font" >K</div>
+                <div>D</div>
+            </div>
+            <div class="header-font">B</div>
+            <div class="header-font">Y</div>
+            <div class="header-font">M</div>
+            <div class="header-font">A</div>
+            <div class="header-font">R</div>
+            <div class="header-font">K</div>
             <div id="line"></div>
         </div>
     </div>
-    <div id="main-content" >
-        <div id="pos1" class="vertical" ></div>
+    <div id="main-content">
+        <div id="pos1" class="vertical"></div>
         <div id="pos2" class="horizontal"></div>
         <div id="pos3" class="vertical"></div>
         <div id="pos4" class="horizontal"></div>
         <div id="content" onclick="slideIn()">
-            <video id="video-bg" autoplay muted loop> 
+            <video id="video-bg" autoplay muted loop>
                 <source data-video="spotify" src="videos/video1.mp4" type="video/mp4">
                 <source data-video="maps" src="videos/video2.mp4" type="video/mp4">
                 <source data-video="landing" src="videos/video3.mp4" type="video/mp4">
@@ -45,11 +47,12 @@
             <div class="ticket-font line1">
                 <p>Rodeo City Cinema</p>
             </div>
-            <div class="ticket-font-sub line2">
+            <div class="ticket-font-sub ticket-font-sub-xl line2">
                 <p>presents</p>
             </div>
             <div class="ticket-font-main line3 ">
-                <p>THE TEXT</p>
+                <p>CODING</p>
+                <p>CRAZY</p>
             </div>
             <div class="ticket-font-sub line4">
                 <p>Starring Mark Reyes</p>
@@ -57,15 +60,26 @@
             <div class="ticket-font line5">
                 <p>For tickets call</p>
             </div>
-            <div class="ticket-font line6">
-                <p>Some information</p>
+            <div class="ticket-font line6 info-flex">
+                <div class="info-flex-child">
+                    <img src="https://www.stanthonyshs.org/wp-content/uploads/2018/01/instagram-logo-black-transparent.png"
+                        alt="">
+                </div>
+                <div class="info-flex-child">
+                    <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="github">
+                </div>
+                <div class="info-flex-child">
+                    <img id="center" src="https://img.icons8.com/ios/100/000000/filled-message.png" alt="email">
+                </div>
             </div>
             <div class="some-image picture">
-                <img src="https://upload.wikimedia.org/wikipedia/en/0/05/Master_Chief_in_Halo_5.png" alt="A pic of me">
+                <img id="center" src="https://upload.wikimedia.org/wikipedia/en/0/05/Master_Chief_in_Halo_5.png"
+                    alt="A pic of me">
             </div>
         </div>
     </section>
 </body>
 <link rel="stylesheet" href="home-style.css">
 <script src="features1.js"></script>
+
 </html>
